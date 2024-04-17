@@ -1,3 +1,9 @@
+ubuntu-rockchip-meta (24.04.2) noble; urgency=medium
+
+  * add rockchip firmware to depends
+
+ -- Joshua Riek <jjriek@verizon.net>  Wed, 17 Apr 2024 09:58:50 -0400
+
 ubuntu-rockchip-meta (24.04.1) noble; urgency=low
 
   * Initial release
