@@ -1,0 +1,5 @@
+ubuntu-rockchip-meta (24.04.1) noble; urgency=low
+
+  * Initial release
+
+ -- Joshua Riek <jjriek@verizon.net>  Tue, 16 Apr 2024 20:40:25 -0400

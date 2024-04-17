@@ -1,0 +1,31 @@
+Source: ubuntu-rockchip-meta
+Section: metapackages
+Priority: optional
+Maintainer: Joshua Riek <jjriek@verizon.net>
+Standards-Version: 4.6.2
+Build-Depends: debhelper-compat (= 13)
+Rules-Requires-Root: no
+Vcs-Browser: https://github.com/Joshua-Riek/ubuntu-rockchip-meta
+Vcs-Git: https://github.com/Joshua-Riek/ubuntu-rockchip-meta
+
+Package: ubuntu-desktop-rockchip
+Architecture: arm64
+Depends: u-boot-menu, cloud-initramfs-growroot, ubuntu-desktop, ubuntu-rockchip-settings, ubuntu-rockchip-settings-desktop
+Recommends: curl, git, htop, openssh-server, lm-sensors, bluez, fake-hwclock, mtd-utils, u-boot-tools
+Description: Ubuntu desktop system for Rockchip 
+ This package depends on all of the packages in the Ubuntu desktop system
+ for Rockchip.
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
+
+Package: ubuntu-server-rockchip
+Architecture: arm64
+Depends: u-boot-menu, ubuntu-server, ubuntu-rockchip-settings, ubuntu-rockchip-settings-server
+Recommends: curl, git, htop, openssh-server, lm-sensors, bluez, fake-hwclock, mtd-utils, u-boot-tools
+Description: Ubuntu Server system for Rockchip
+ This package depends on all of the packages in the Ubuntu Server system
+ for Rockchip.
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed.
