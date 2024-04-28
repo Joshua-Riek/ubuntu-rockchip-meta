@@ -1,3 +1,9 @@
+ubuntu-rockchip-meta (22.04.1) jammy; urgency=medium
+
+  * backport to jammy
+
+ -- Joshua Riek <jjriek@verizon.net>  Sun, 28 Apr 2024 19:20:27 -0400
+
 ubuntu-rockchip-meta (24.04.4) noble; urgency=medium
 
   * add mpv to recommends
