@@ -1,3 +1,9 @@
+ubuntu-rockchip-meta (24.04.5) noble; urgency=medium
+
+  * add wpasupplicant to recommends
+
+ -- Joshua Riek <jjriek@verizon.net>  Mon, 03 Jun 2024 16:39:08 -0400
+
 ubuntu-rockchip-meta (24.04.4) noble; urgency=medium
 
   * add mpv to recommends
