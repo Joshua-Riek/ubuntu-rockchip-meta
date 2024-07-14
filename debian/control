@@ -11,7 +11,7 @@ Vcs-Git: https://github.com/Joshua-Riek/ubuntu-rockchip-meta
 Package: ubuntu-desktop-rockchip
 Architecture: arm64
 Depends: u-boot-menu, cloud-initramfs-growroot, ubuntu-desktop, ubuntu-rockchip-settings, ubuntu-rockchip-settings-desktop, rockchip-firmware
-Recommends: curl, git, htop, openssh-server, lm-sensors, bluez, fake-hwclock, mtd-utils, u-boot-tools, usb-modeswitch, usb-modeswitch-data, mpv
+Recommends: curl, git, htop, openssh-server, lm-sensors, bluez, fake-hwclock, mtd-utils, u-boot-tools, usb-modeswitch, usb-modeswitch-data, rfkill, mpv
 Description: Ubuntu desktop system for Rockchip 
  This package depends on all of the packages in the Ubuntu desktop system
  for Rockchip.
@@ -22,7 +22,7 @@ Description: Ubuntu desktop system for Rockchip
 Package: ubuntu-server-rockchip
 Architecture: arm64
 Depends: u-boot-menu, ubuntu-server, ubuntu-rockchip-settings, ubuntu-rockchip-settings-server, rockchip-firmware
-Recommends: curl, git, htop, openssh-server, lm-sensors, bluez, fake-hwclock, mtd-utils, u-boot-tools, usb-modeswitch, usb-modeswitch-data, wpasupplicant
+Recommends: curl, git, htop, openssh-server, lm-sensors, bluez, fake-hwclock, mtd-utils, u-boot-tools, usb-modeswitch, usb-modeswitch-data, rfkill, wpasupplicant
 Description: Ubuntu Server system for Rockchip
  This package depends on all of the packages in the Ubuntu Server system
  for Rockchip.
