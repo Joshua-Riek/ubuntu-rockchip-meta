@@ -1,3 +1,9 @@
+ubuntu-rockchip-meta (24.04.6) noble; urgency=medium
+
+  * add rfkill to recommends
+
+ -- Joshua Riek <jjriek@verizon.net>  Sun, 14 Jul 2024 16:59:54 -0400
+
 ubuntu-rockchip-meta (24.04.5) noble; urgency=medium
 
   * add wpasupplicant to recommends
