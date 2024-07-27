@@ -1,0 +1,5 @@
+ubuntu-server-rockchip
+ubuntu-desktop-rockchip
+debhelper-build-stamp
+*.substvars
+files
