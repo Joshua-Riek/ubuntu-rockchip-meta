@@ -1,3 +1,10 @@
+ubuntu-rockchip-meta (22.04.4) jammy; urgency=medium
+
+  * add wireless-regdb to recommends
+  * add gitignore file
+
+ -- Joshua Riek <jjriek@verizon.net>  Sat, 27 Jul 2024 12:33:32 -0400
+
 ubuntu-rockchip-meta (22.04.3) jammy; urgency=medium
 
   * add rfkill to recommends
