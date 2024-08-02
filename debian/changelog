@@ -1,3 +1,11 @@
+ubuntu-rockchip-meta (24.10.2) oracular; urgency=medium
+
+  * remove rockchip-firmware package from depends
+  * add wireless-regdb to recommends
+  * add gitignore file 
+
+ -- Joshua Riek <jjriek@verizon.net>  Fri, 02 Aug 2024 08:47:50 -0400
+
 ubuntu-rockchip-meta (24.10.1) oracular; urgency=medium
 
   * Port to oracular
