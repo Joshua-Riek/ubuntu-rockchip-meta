@@ -1,3 +1,9 @@
+ubuntu-rockchip-meta (24.04.8) noble; urgency=medium
+
+  * add rockchip multimeda packages to recommends
+
+ -- Joshua Riek <jjriek@verizon.net>  Sat, 03 Aug 2024 09:46:59 -0400
+
 ubuntu-rockchip-meta (24.04.7) noble; urgency=medium
 
   * add wireless-regdb to recommends
