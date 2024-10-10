@@ -1,0 +1,70 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - jammy
+      - noble
+      - oracular
+  pull_request:
+    branches:
+      - jammy
+      - noble
+      - oracular
+  workflow_dispatch:
+
+jobs:
+    parse:
+        runs-on: ubuntu-latest
+        outputs:
+            release_version: ${{ steps.parsechangelog.outputs.test }}
+
+        steps:  
+        - name: Checkout repo
+          uses: actions/checkout@v4
+
+        - name: Parse package distribution 
+          id: parsechangelog
+          shell: bash
+          run: | 
+            distribution="$(dpkg-parsechangelog -S Distribution)"
+            case "$distribution" in
+                jammy)      echo "test=22.04" >> $GITHUB_OUTPUT ;;
+                noble)      echo "test=24.04" >> $GITHUB_OUTPUT ;;
+                oracular)   echo "test=24.10" >> $GITHUB_OUTPUT ;;
+                *)          exit 1 ;;
+            esac
+
+    build:
+      runs-on: ubuntu-latest
+      needs: parse
+      container: ubuntu:${{ needs.parse.outputs.release_version }}
+
+      steps:
+        - name: Update package list
+          shell: bash
+          run: apt-get update
+  
+        - name: Upgrade packages
+          shell: bash
+          run: apt-get upgrade -y
+  
+        - name: Checkout repo
+          uses: actions/checkout@v4
+
+        - name: Configure build-dependencies
+          shell: bash
+          run: apt-get build-dep . -y
+
+        - name: Build package
+          shell: bash
+          run: |
+            echo "artifacts_path=$(realpath ..)" >> $GITHUB_ENV
+            dpkg-buildpackage --host-arch arm64 --unsigned-source --unsigned-changes
+  
+        - name: Upload Artifact
+          uses: actions/upload-artifact@v4.3.3
+          with:
+              name: ubuntu-rockchip-meta
+              path: ${{ env.artifacts_path }}/*.deb
+              if-no-files-found: error
