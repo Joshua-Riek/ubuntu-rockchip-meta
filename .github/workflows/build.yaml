@@ -1,0 +1,55 @@
+---
+name: Build
+'on':
+  push:
+    branches:
+      - jammy
+      - noble
+      - oracular
+      - plucky
+  pull_request:
+    branches:
+      - jammy
+      - noble
+      - oracular
+      - plucky
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Update package list
+        shell: bash
+        run: sudo apt-get update
+
+      - name: Upgrade packages
+        shell: bash
+        run: sudo apt-get upgrade -y
+
+      - name: Install build dependencies
+        shell: bash
+        run: sudo apt-get install -y pbuilder binfmt-support qemu-user-static qemu-system-arm
+
+      - name: Create source package
+        shell: bash
+        run: dpkg-source -b .
+
+      - name: Create base tarball
+        shell: bash
+        run: sudo pbuilder create --architecture arm64 --mirror http://ports.ubuntu.com/ubuntu-ports --distribution "$(dpkg-parsechangelog -S Distribution)"
+
+      - name: Build using base tarball
+        shell: bash
+        run: |
+          echo "artifacts_path=$(realpath ..)" >> $GITHUB_ENV
+          sudo pbuilder build --architecture arm64 --mirror http://ports.ubuntu.com/ubuntu-ports --distribution "$(dpkg-parsechangelog -S Distribution)" --buildresult ../out --debbuildopts "-a arm64" ../*.dsc 
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4.3.3
+        with:
+            name: ubuntu-rockchip-meta
+            path: ${{ env.artifacts_path }}/out/*
+            if-no-files-found: error
