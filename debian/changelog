@@ -1,3 +1,10 @@
+ubuntu-rockchip-meta (25.04.1) plucky; urgency=medium
+
+  * add readme
+  * add github actions workflow
+
+ -- Joshua Riek <jjriek@verizon.net>  Tue, 03 Dec 2024 21:28:37 -0500
+
 ubuntu-rockchip-meta (24.10.2) oracular; urgency=medium
 
   * remove rockchip-firmware package from depends
