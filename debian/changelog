@@ -1,3 +1,9 @@
+ubuntu-rockchip-meta (25.04.3) plucky; urgency=medium
+
+  * fix readme typo
+
+ -- Joshua Riek <jjriek@verizon.net>  Tue, 24 Dec 2024 12:16:11 -0500
+
 ubuntu-rockchip-meta (25.04.2) plucky; urgency=medium
 
   * reduce readme info
